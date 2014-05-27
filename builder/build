@@ -1,6 +1,8 @@
 #!/bin/sh
+
 build_dir=/tmp/build
+
 mkdir $build_dir
+
 cat | tar -x -f - -C $build_dir
-cd $build_dir
-docker -H $DOCKER build -t $1 .
+docker -H $DOCKER build -t $1 $build_dir

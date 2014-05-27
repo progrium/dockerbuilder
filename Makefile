@@ -7,5 +7,5 @@ tag:
 
 test:
 	tar -C ./example -cf - . | docker run -i -a stdin -a stdout -v /var/run/docker.sock:/tmp/docker.sock dockerbuilder dockerbuilder-test
-	docker run dockerbuilder-test
+	docker run --rm dockerbuilder-test
 	docker rmi dockerbuilder-test
